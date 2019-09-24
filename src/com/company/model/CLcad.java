@@ -137,20 +137,4 @@ public class CLcad {
         }
         return 0;
     }
-
-    public void m_showRows(ResultSet dataRows) {
-        /* Récupération des données du résultat de la requête de lecture */
-        try {
-            /* Récupération des données du résultat de la requête de lecture */
-            while ( dataRows.next() ) {
-                for (int i = 1; i <= dataRows.getMetaData().getColumnCount(); i++) {
-                    System.out.print(dataRows.getString(i) + " ; ");
-                }
-                System.out.println("");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
 }

@@ -8,18 +8,35 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Main {
-
     public static void main(String[] args) {
-        // DECLARATION CONNECTION DATABASE
-        CLcad con = new CLcad("jdbc:mysql://localhost:3306/tb_personne?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false& serverTimezone=UTC", "root", "");
-        System.out.println(con.getCon());
+        System.out.println("salut");
 
-        // EXECUTION QUERY REQUEST
-        ResultSet resultat = con.m_getRows("SELECT * FROM TB_PERSONNE;");
-        con.m_showRows(resultat);
+        CLctrlGestionComptePersonne objGestion;
+        ResultSet rs;
 
-        // EXECUTION UPDATE QUERY
-        System.out.println(con.m_actionRows("INSERT INTO TB_PERSONNE (name, firstName) VALUES ('Test','Projet')"));
+        objGestion = new CLctrlGestionComptePersonne();
 
+        rs = objGestion.listerLesComptes();
+        afficher(rs);
+
+        objGestion.CreeUnCompte("X", "x");
+        rs = objGestion.listerLesComptes();
+        afficher(rs);
     }
+
+    public static void afficher(ResultSet dataRows) {
+        /* Récupération des données du résultat de la requête de lecture */
+        try {
+            /* Récupération des données du résultat de la requête de lecture */
+            while ( dataRows.next() ) {
+                for (int i = 1; i <= dataRows.getMetaData().getColumnCount(); i++) {
+                    System.out.print(dataRows.getString(i) + " ; ");
+                }
+                System.out.println("");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
