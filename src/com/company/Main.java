@@ -7,10 +7,15 @@ import com.company.view.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("salut");
 
+        final String  PATH = "D:\\Documents\\Cours Exia A3\\UE MAD MAX\\project\\test\\";
+        final String KEY = "adhyudertjutl";
+
+        //CONNEXION DATABASE
         CLctrlGestionComptePersonne objGestion;
         ResultSet rs;
 
@@ -22,6 +27,28 @@ public class Main {
         objGestion.CreeUnCompte("X", "x");
         rs = objGestion.listerLesComptes();
         afficher(rs);
+
+        // CRYPTAGE DECRYPTAGE + LOAD FILES
+        CLctrlCrypt o1;
+        String reponse;
+
+        o1 = new CLctrlCrypt();
+        o1.ecrireFichierSimple( PATH + "a.txt", "Bonjour a tous. Comment Allez vous?");
+
+        reponse = o1.lireFichierSimple(PATH + "a.txt");
+        System.out.println(reponse);
+
+        reponse = o1.crypter(reponse, KEY);
+        System.out.println(reponse);
+        o1.ecrireFichierSimple(PATH + "b.txt", reponse);
+
+        reponse = o1.lireFichierSimple(PATH  + "b.txt");
+        reponse = o1.decrypter(reponse, KEY);
+        o1.ecrireFichierSimple(PATH + "c.txt", reponse);
+        System.out.println(reponse);
+
+        System.out.println("Terminé");
+
     }
 
     public static void afficher(ResultSet dataRows) {
