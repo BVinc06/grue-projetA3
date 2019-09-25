@@ -1,4 +1,4 @@
 package com.company.view;
 
-public class mainView {
+public class frm_decrypt {
 }

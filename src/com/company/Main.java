@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) {
-
+        /*
         final String  PATH = "D:\\Documents\\Cours Exia A3\\UE MAD MAX\\project\\test\\";
         final String KEY = "adhyudertjutl";
 
@@ -48,6 +48,9 @@ public class Main {
         System.out.println(reponse);
 
         System.out.println("Terminé");
+        */
+
+        frm_auth auth = new frm_auth();
 
     }
 
