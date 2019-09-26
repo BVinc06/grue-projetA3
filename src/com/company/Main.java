@@ -11,9 +11,9 @@ import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) {
-        /*
+
         final String  PATH = "D:\\Documents\\Cours Exia A3\\UE MAD MAX\\project\\test\\";
-        final String KEY = "adhyudertjutl";
+        final String KEY = "awqpudertjutl";
 
         //CONNEXION DATABASE
         CLctrlGestionComptePersonne objGestion;
@@ -33,7 +33,7 @@ public class Main {
         String reponse;
 
         o1 = new CLctrlCrypt();
-        o1.ecrireFichierSimple( PATH + "a.txt", "Bonjour a tous. Comment Allez vous?");
+        o1.ecrireFichierSimple( PATH + "a.txt", "Campus d’enseignement superieur et de formation professionnelle, CESI poursuit sa mission societale en permettant à des etudiants, alternants et salaries de devenir acteurs des transformations des entreprises et de la societe, grace a ses ecoles et activites.");
 
         reponse = o1.lireFichierSimple(PATH + "a.txt");
         System.out.println(reponse);
@@ -48,7 +48,7 @@ public class Main {
         System.out.println(reponse);
 
         System.out.println("Terminé");
-        */
+
 
         frm_auth auth = new frm_auth();
 

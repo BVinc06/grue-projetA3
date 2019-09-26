@@ -4,8 +4,14 @@
     <list default="true" id="841da268-1c06-4ce3-9ea9-efdc2a9be516" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/co/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/co/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/co/com/company/model/CLcad.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/co/com/company/model/CLcad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/co/com/company/view/frm_auth.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/co/com/company/view/frm_auth.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/co/com/company/view/frm_auth_panel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/co/com/company/view/frm_auth_panel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/co/com/company/view/frm_decrypt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/co/com/company/view/frm_decrypt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/co/com/company/view/mainView.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/view/mainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/view/mainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/model/CLcad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/model/CLcad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/view/frm_auth_panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/view/frm_auth_panel.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +42,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -79,7 +86,9 @@
       <workItem from="1569312981181" duration="662000" />
       <workItem from="1569313859665" duration="11579000" />
       <workItem from="1569331432964" duration="112000" />
-      <workItem from="1569393871984" duration="5213000" />
+      <workItem from="1569393871984" duration="11815000" />
+      <workItem from="1569419260051" duration="2257000" />
+      <workItem from="1569479617610" duration="8013000" />
     </task>
     <servers />
   </component>
