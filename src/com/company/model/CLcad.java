@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class CLcad {
 
@@ -71,6 +72,25 @@ public class CLcad {
         this.setPsw(null);
         this.setStmt(null);
         this.setRs(null);
+        /*
+        // Chargement du driver JDBC pour MySQL
+        try {
+            Class.forName( "com.mysql.jdbc.Driver" );
+            this.setCon(DriverManager.getConnection( this.getConnectionUrl(), this.getLogin(), this.getPsw() ));
+            System.out.println(this.getCon());
+        } catch (ClassNotFoundException | SQLException e ) {
+            // Gérer les éventuelles erreurs ici.
+        } finally {
+            if ( this.getCon() != null )
+                try {
+                    System.out.println("FERMETURE");
+                    // Fermeture de la connexion
+                    this.getCon().close();
+                } catch ( SQLException ignore ) {
+                    // Si une erreur survient lors de la fermeture, il suffit de l'ignorer.
+                }
+        }
+        */
     }
 
     public CLcad(String connectionUrl, String login, String psw) {
@@ -79,7 +99,7 @@ public class CLcad {
         this.setPsw(psw);
         /* Chargement du driver JDBC pour MySQL */
         try {
-            System.out.println("CONNECTION");
+            //System.out.println("CONNECTION");
             this.setCon(DriverManager.getConnection( this.getConnectionUrl(), this.getLogin(), this.getPsw() ));
         } catch ( SQLException e ) {
             /* Gérer les éventuelles erreurs ici. */
@@ -100,12 +120,32 @@ public class CLcad {
 
     public ResultSet m_getRows(String request){
         try {
+
             this.setStmt(this.getCon().createStatement());
+
             this.setRs(this.getStmt().executeQuery(request));
         } catch ( SQLException e) {
             e.printStackTrace();
         }
         return this.getRs();
+    }
+    public ArrayList<String> m_getAllRows(String request){
+        try {
+            ArrayList<String> list= new ArrayList<String>();
+            this.setStmt(this.getCon().createStatement());
+
+            ResultSet req_res = this.getStmt().executeQuery(request);
+            while (req_res.next())
+            {
+                //String nom = req_res.getString("mot");
+                // print the results
+                list.add(req_res.getString("mot"));
+            }
+            return list;
+        } catch ( SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public int m_actionRows(String request){

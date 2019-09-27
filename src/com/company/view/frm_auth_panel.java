@@ -1,5 +1,7 @@
 package com.company.view;
 
+import com.company.controller.wkf_cpte;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -14,6 +16,7 @@ public class frm_auth_panel extends JPanel  implements ActionListener, KeyListen
     private JTextField textUsername = new JTextField(20);
     private JPasswordField fieldPassword = new JPasswordField(20);
     private JButton buttonOk = new JButton("OK");
+    private wkf_cpte compte = new wkf_cpte();
 
     private String user, pwd;
 
@@ -49,7 +52,7 @@ public class frm_auth_panel extends JPanel  implements ActionListener, KeyListen
 
         //TODO : APPELER VERIFICATION LOGIN -> SI OK : RENVOYER LA VUE EXPLORATEUR FICHIER
         if(this.checkIfLoginIsOK()){
-
+            System.out.println("GOOD ENTRER");
         } else {
             JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
             JOptionPane.showMessageDialog(topFrame, "Erreur de connexion, merci de vérifier vos identifiants.");
@@ -72,7 +75,7 @@ public class frm_auth_panel extends JPanel  implements ActionListener, KeyListen
             System.out.println("ENTER");
             //TODO : APPELER VERIFICATION LOGIN -> SI OK : RENVOYER LA VUE EXPLORATEUR FICHIER
             if(this.checkIfLoginIsOK()){
-
+                System.out.println("GOOD");
             } else {
                 JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
                 JOptionPane.showMessageDialog(topFrame, "Erreur de connexion, merci de vérifier vos identifiants.");
@@ -80,9 +83,10 @@ public class frm_auth_panel extends JPanel  implements ActionListener, KeyListen
         }
     }
 
-    private static boolean checkIfLoginIsOK(){
+    private boolean checkIfLoginIsOK(){
         //TODO : APPELER VERIFICATION LOGIN
-        return false;
+
+        return compte.pcs_authentifier(this.user, this.pwd);
     }
 
 }
